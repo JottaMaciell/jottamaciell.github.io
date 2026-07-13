@@ -1,1 +1,39 @@
+body {
+    background: #d3d3d3 url('/assets/images/paper-bg.jpg') center/cover;
+    margin: 0;
+    padding: 2rem;
+}
 
+.collage-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Ponto Focal (Maior) */
+.focal-carrera {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    transition: transform 0.5s ease;
+}
+
+/* Estilo dos Títulos com Blend Mode */
+.blend-title {
+    mix-blend-mode: difference;
+    color: white;
+    font-size: 5vw;
+}
+
+/* Efeito Hover em tudo */
+.item:hover {
+    opacity: 0.7;
+    transform: scale(1.02);
+    transition: 0.3s ease;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .collage-container { grid-template-columns: 1fr; }
+    .focal-carrera { grid-column: 1; }
+}
